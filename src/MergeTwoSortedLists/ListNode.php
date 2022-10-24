@@ -6,12 +6,7 @@ namespace MergeTwoSortedLists;
 
 final class ListNode
 {
-    public int $val = 0;
-    public ?ListNode $next = null;
-
-    function __construct($val = 0, $next = null)
+    public function __construct(public int $val = 0, public ?ListNode $next = null)
     {
-        $this->val = $val;
-        $this->next = $next;
     }
 }

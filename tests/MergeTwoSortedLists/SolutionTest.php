@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace tests\MergeTwoSortedLists;
 
 use PHPUnit\Framework\TestCase;
 use MergeTwoSortedLists\ListNode;
 use MergeTwoSortedLists\Solution;
 
-class SolutionTest extends TestCase
+final class SolutionTest extends TestCase
 {
     /**
      * @test
@@ -44,7 +46,7 @@ class SolutionTest extends TestCase
     private function createList(array $array): ListNode
     {
         /** @var ListNode[] $array */
-        $array = array_map(function (int $value) {
+        $array = array_map(static function (int $value) {
             $l = new ListNode();
             $l->val = $value;
             return $l;

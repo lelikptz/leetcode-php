@@ -11,7 +11,7 @@ final class Solution
      * @param ListNode $b
      * @return ListNode
      */
-    function mergeTwoLists(ListNode $a, ListNode $b): ListNode
+    public function mergeTwoLists(ListNode $a, ListNode $b): ListNode
     {
         $current = new ListNode();
         $current->val = 0;
@@ -27,7 +27,7 @@ final class Solution
             $current = $current->next;
         }
 
-        $current->next = $a != null ? $a : $b;
+        $current->next = $a ?? $b;
 
         return $head->next;
     }
