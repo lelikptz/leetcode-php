@@ -21,7 +21,7 @@ class SolutionTest extends TestCase
         $actualCount = $solution->removeDuplicates($nums);
 
         $this->assertEquals($nums, $expected);
-//        $this->assertEquals($length, $actualCount);
+        $this->assertEquals($length, $actualCount);
     }
 
     public function dataProvider(): array
