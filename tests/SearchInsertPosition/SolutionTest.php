@@ -5,7 +5,7 @@ namespace tests\SearchInsertPosition;
 use SearchInsertPosition\Solution;
 use PHPUnit\Framework\TestCase;
 
-class SolutionTest extends TestCase
+final class SolutionTest extends TestCase
 {
     /**
      * @dataProvider dataProvider

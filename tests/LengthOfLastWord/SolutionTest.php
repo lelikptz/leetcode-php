@@ -5,7 +5,7 @@ namespace tests\LengthOfLastWord;
 use LengthOfLastWord\Solution;
 use PHPUnit\Framework\TestCase;
 
-class SolutionTest extends TestCase
+final class SolutionTest extends TestCase
 {
     /**
      * @param string $s

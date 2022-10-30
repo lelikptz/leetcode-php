@@ -5,7 +5,7 @@ namespace tests\RemoveDuplicates;
 use PHPUnit\Framework\TestCase;
 use RemoveDuplicates\Solution;
 
-class SolutionTest extends TestCase
+final class SolutionTest extends TestCase
 {
     /**
      * @dataProvider dataProvider
