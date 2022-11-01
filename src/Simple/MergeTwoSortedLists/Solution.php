@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Simple\MergeTwoSortedLists;
 
+use Structure\ListNode;
+
 final class Solution
 {
     public function mergeTwoLists(ListNode $a, ListNode $b): ListNode

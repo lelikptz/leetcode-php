@@ -25,7 +25,7 @@ final class SolutionTest extends TestCase
 
         sort($nums);
         sort($expected);
-        $this->assertEquals($nums, $expected);
+        $this->assertEquals($expected, $nums);
         $this->assertSame($length, $actualCount);
     }
 

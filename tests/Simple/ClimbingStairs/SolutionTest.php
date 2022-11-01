@@ -20,7 +20,7 @@ class SolutionTest extends TestCase
 
         $actual = $solution->climbStairs($n);
 
-        $this->assertEquals($actual, $expected);
+        $this->assertEquals($expected, $actual);
     }
 
     public function dataProvider(): array

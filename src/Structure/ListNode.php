@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Simple\MergeTwoSortedLists;
+namespace Structure;
 
 final class ListNode
 {

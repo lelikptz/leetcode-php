@@ -20,7 +20,7 @@ final class SolutionTest extends TestCase
         $solution = new Solution();
         $actualCount = $solution->removeDuplicates($nums);
 
-        $this->assertEquals($nums, $expected);
+        $this->assertEquals($expected, $nums);
         $this->assertEquals($length, $actualCount);
     }
 

@@ -2,45 +2,38 @@
 
 declare(strict_types=1);
 
-namespace tests\Simple\MergeTwoSortedLists;
+namespace tests\Simple\RemoveDuplicatesFromSortedList;
 
 use PHPUnit\Framework\TestCase;
-use Simple\MergeTwoSortedLists\Solution;
+use Simple\RemoveDuplicatesFromSortedList\Solution;
 use Structure\ListNode;
 
 final class SolutionTest extends TestCase
 {
     /**
      * @test
-     * @dataProvider dataProviderList
-     * @param ListNode $a
-     * @param ListNode $b
+     * @dataProvider dataProvider
+     * @param ListNode $node
      * @param ListNode $expected
      * @return void
      */
-    public function mergeTwoLists(ListNode $a, ListNode $b, ListNode $expected): void
+    public function deleteDuplicates(ListNode $node, ListNode $expected): void
     {
         $solution = new Solution();
 
-        $actual = $solution->mergeTwoLists($a, $b);
+        $actual = $solution->deleteDuplicates($node);
 
         $this->assertEquals($expected, $actual);
     }
 
-    public function dataProviderList(): array
+    public function dataProvider(): array
     {
-        return [
+        return
             [
-                $this->createList([1, 2, 4]),
-                $this->createList([1, 3, 4]),
-                $this->createList([1, 1, 2, 3, 4, 4])
-            ],
-            [
-                $this->createList([1, 2, 3, 4]),
-                $this->createList([5, 6, 7]),
-                $this->createList([1, 2, 3, 4, 5, 6, 7])
-            ]
-        ];
+                [$this->createList([1, 1, 2]), $this->createList([1, 2])],
+                [$this->createList([1, 1, 2, 3, 3]), $this->createList([1, 2, 3])],
+                [$this->createList([1, 1, 1]), $this->createList([1])],
+            ];
     }
 
     private function createList(array $array): ListNode

@@ -20,7 +20,7 @@ final class SolutionTest extends TestCase
 
         $actual = $solution->lengthOfLastWord($s);
 
-        $this->assertEquals($actual, $expected);
+        $this->assertEquals($expected, $actual);
     }
 
     public function dataProvider(): array
