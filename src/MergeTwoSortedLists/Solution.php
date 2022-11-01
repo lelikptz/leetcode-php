@@ -6,11 +6,6 @@ namespace MergeTwoSortedLists;
 
 final class Solution
 {
-    /**
-     * @param ListNode $a
-     * @param ListNode $b
-     * @return ListNode
-     */
     public function mergeTwoLists(ListNode $a, ListNode $b): ListNode
     {
         $current = new ListNode();

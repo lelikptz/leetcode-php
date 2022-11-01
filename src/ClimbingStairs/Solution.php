@@ -6,10 +6,6 @@ namespace ClimbingStairs;
 
 final class Solution
 {
-    /**
-     * @param int $n
-     * @return int
-     */
     public function climbStairs(int $n): int
     {
         $arr = [1 => 1, 2 => 2];

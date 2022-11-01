@@ -6,10 +6,6 @@ namespace LengthOfLastWord;
 
 final class Solution
 {
-    /**
-     * @param string $s
-     * @return int
-     */
     public function lengthOfLastWord(string $s): int
     {
         $arr = explode(' ', trim($s));

@@ -6,11 +6,7 @@ namespace SqrtX;
 
 final class Solution
 {
-    /**
-     * @param int $x
-     * @return int
-     */
-    function mySqrt(int $x): int
+    public function mySqrt(int $x): int
     {
         $result = 0;
         $test = 0;
@@ -22,6 +18,6 @@ final class Solution
             $result--;
         }
 
-        return (int)round($result, 0, PHP_ROUND_HALF_DOWN);
+        return $result;
     }
 }

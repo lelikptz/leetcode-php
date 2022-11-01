@@ -7,7 +7,7 @@ namespace SearchInsertPosition;
 final class Solution
 {
     /**
-     * @param array $nums
+     * @param int[] $nums
      * @param int $target
      * @return int
      */

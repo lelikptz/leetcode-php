@@ -7,7 +7,7 @@ namespace PlusOne;
 final class Solution
 {
     /**
-     * @param array $digits
+     * @param int[] $digits
      * @return array
      */
     public function plusOne(array $digits): array

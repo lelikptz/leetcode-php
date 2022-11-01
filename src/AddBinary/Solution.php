@@ -6,18 +6,13 @@ namespace AddBinary;
 
 final class Solution
 {
-    /**
-     * @param string $a
-     * @param string $b
-     * @return string
-     */
     public function addBinary(string $a, string $b): string
     {
         $long = strlen($a) > strlen($b) ? $a : $b;
         $short = strlen($a) <= strlen($b) ? $a : $b;
 
         $carry = 0;
-        for ($i = 0; $i < strlen($long); $i++) {
+        for ($i = 0, $iMax = strlen($long); $i < $iMax; $i++) {
             $aa = $long[strlen($long) - 1 - $i];
             if (strlen($short) - 1 - $i >= 0) {
                 $bb = $short[strlen($short) - 1 - $i] ?? 0;
@@ -26,7 +21,7 @@ final class Solution
             }
             $cc = (int)$aa + (int)$bb + $carry;
             if ($cc >= 2) {
-                $cc = $cc - 2;
+                $cc -= 2;
                 $carry = 1;
             } else {
                 $carry = 0;
