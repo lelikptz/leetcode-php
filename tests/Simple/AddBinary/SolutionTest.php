@@ -36,5 +36,4 @@ final class SolutionTest extends TestCase
                 ['1111', '1111', '11110'],
             ];
     }
-
 }
