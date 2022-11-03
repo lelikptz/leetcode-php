@@ -13,7 +13,7 @@ final class Solution
     public function findBall(array $grid): array
     {
         $res = [];
-        for ($i = 0; $i < count($grid[0]); $i++) {
+        for ($i = 0, $iMax = count($grid[0]); $i < $iMax; $i++) {
 
             $start = $i;
             foreach ($grid as $row => $colItems) {
@@ -33,21 +33,13 @@ final class Solution
         return $res;
     }
 
-    function canRight(array $grid, int $row, int $column): bool
+    public function canRight(array $grid, int $row, int $column): bool
     {
-        if (isset($grid[$row][$column + 1]) && $grid[$row][$column] === 1 && $grid[$row][$column + 1] === 1) {
-            return true;
-        }
-
-        return false;
+        return isset($grid[$row][$column + 1]) && $grid[$row][$column] === 1 && $grid[$row][$column + 1] === 1;
     }
 
-    function canLeft(array $grid, int $row, int $column): bool
+    public function canLeft(array $grid, int $row, int $column): bool
     {
-        if (isset($grid[$row][$column - 1]) && $grid[$row][$column] === -1 && $grid[$row][$column - 1] === -1) {
-            return true;
-        }
-
-        return false;
+        return isset($grid[$row][$column - 1]) && $grid[$row][$column] === -1 && $grid[$row][$column - 1] === -1;
     }
 }
