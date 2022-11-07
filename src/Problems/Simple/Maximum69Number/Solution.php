@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Simple\Maximum69Number;
+namespace Problems\Simple\Maximum69Number;
 
 final class Solution
 {

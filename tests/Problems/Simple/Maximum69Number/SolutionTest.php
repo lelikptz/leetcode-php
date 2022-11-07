@@ -1,9 +1,9 @@
 <?php
 
-namespace tests\Simple\Maximum69Number;
+namespace tests\Problems\Simple\Maximum69Number;
 
-use Simple\Maximum69Number\Solution;
 use PHPUnit\Framework\TestCase;
+use Problems\Simple\Maximum69Number\Solution;
 
 class SolutionTest extends TestCase
 {
