@@ -1,5 +1,5 @@
 {
-    "name": "aleksei.orlov/leetcode",
+    "name": "lelikptz/leetcode-php",
     "autoload": {
         "psr-4": {
             "": "src/",
@@ -8,7 +8,7 @@
     },
     "authors": [
         {
-            "name": "aleksei.orlov",
+            "name": "Aleksei Orlov",
             "email": "alexey@orlov.tech"
         }
     ],
