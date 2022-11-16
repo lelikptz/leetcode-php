@@ -34,5 +34,4 @@ final class SolutionTest extends TestCase
                 ['luffy is still joyboy', 6],
             ];
     }
-
 }
