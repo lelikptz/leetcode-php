@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace tests\Problems\Simple\MakeTheStringGreat;
 
 use PHPUnit\Framework\TestCase;

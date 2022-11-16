@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace tests\Problems\Simple\Maximum69Number;
 
 use PHPUnit\Framework\TestCase;
