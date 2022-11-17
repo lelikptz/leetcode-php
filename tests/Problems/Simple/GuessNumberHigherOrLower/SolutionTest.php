@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+namespace tests\Problems\Simple\GuessNumberHigherOrLower;
+
+use Exception;
 use PHPUnit\Framework\TestCase;
 use Problems\Simple\GuessNumberHigherOrLower\Solution;
 
