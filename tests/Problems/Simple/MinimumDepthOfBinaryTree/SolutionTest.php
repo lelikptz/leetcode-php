@@ -42,7 +42,6 @@ final class SolutionTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
-
     public function dataProviderList(): array
     {
         return [
