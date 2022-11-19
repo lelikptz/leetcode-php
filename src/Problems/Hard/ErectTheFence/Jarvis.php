@@ -40,7 +40,7 @@ final class Jarvis
         return $result;
     }
 
-    public function orientation(array $a, array $b, array $c): int
+    private function orientation(array $a, array $b, array $c): int
     {
         return ($b[0] - $a[0]) * ($c[1] - $b[1]) - ($b[1] - $a[1]) * ($c[0] - $b[0]);
     }
