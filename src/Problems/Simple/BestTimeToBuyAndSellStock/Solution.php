@@ -6,55 +6,18 @@ namespace Problems\Simple\BestTimeToBuyAndSellStock;
 
 final class Solution
 {
-    /**
-     * @param int[] $prices
-     * @return int
-     */
-    public function maxProfit(array $prices): int
+    public function maxProfit($prices)
     {
-        $array = [];
-        foreach ($prices as $key => $item) {
-            if (!isset($prices[$key - 1], $prices[$key + 1])
-                ||
-                (
-                    !($item <= $prices[$key - 1] && $item >= $prices[$key + 1])
-                    &&
-                    !($item > $prices[$key - 1] && $item < $prices[$key + 1])
-                )
-            ) {
-                $array[] = $item;
-            }
-        }
-
-        return $this->max($array, 0);
-    }
-
-    public function max(array $prices, int $index): int
-    {
-        if ($index >= count($prices)) {
-            return 0;
-        }
-
+        $min = $prices[0];
         $max = 0;
-        $maxIndex = $index;
-        $min = $prices[$index];
-        for ($i = $index, $iMax = count($prices); $i < $iMax; $i++) {
-            if ($prices[$i] > $max) {
-                $max = $prices[$i];
-                $maxIndex = $i;
-            }
-        }
-
-        for ($i = $index, $iMax = $maxIndex; $i < $iMax; $i++) {
-            if ($prices[$i] < $min) {
+        for ($i = 1, $iMax = count($prices); $i < $iMax; $i++) {
+            if ($min > $prices[$i]) {
                 $min = $prices[$i];
             }
+
+            $max = max($prices[$i] - $min, $max);
         }
 
-        if ($maxIndex === $index) {
-            $maxIndex = ++$index;
-        }
-
-        return max([$max - $min, $this->max($prices, $maxIndex)]);
+        return $max;
     }
 }
