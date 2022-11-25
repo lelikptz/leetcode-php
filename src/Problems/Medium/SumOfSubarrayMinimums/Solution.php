@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Problems\Medium\SumOfSubarrayMinimums;
 
+use SplStack;
+
 final class Solution
 {
     private const LIMIT = 1000000007;
@@ -14,30 +16,21 @@ final class Solution
      */
     public function sumSubarrayMins(array $arr): int
     {
+        $stack = new SplStack();
         $sum = 0;
-        for ($i = 0, $iMax = count($arr); $i < $iMax; $i++) {
-            $tmp = array_slice($arr, $i);
-            $minIndex = null;
-            for ($j = 0, $jMax = count($arr) - $i - 1; $j < $jMax; $j++) {
-                $a = array_slice($tmp, 0, count($tmp) - $j);
-                $minIndex = ($minIndex === null || $minIndex > count($tmp) - $j - 1) ? $this->findMinIndex($a) : $minIndex;
-                $sum += $a[$minIndex];
+        foreach ($arr as $i => $iValue) {
+            while (!$stack->isEmpty() && ($i === count($arr) || $arr[$stack->top()] >= $iValue)) {
+                $mid = $stack->pop();
+                $left = $stack->isEmpty() ? -1 : $stack->top();
+                $right = $i;
+                $count = ($mid - $left) * ($right - $mid) % self::LIMIT;
+                $sum += ($count * $arr[$mid]) % self::LIMIT;
                 $sum %= self::LIMIT;
             }
+
+            $stack->push($i);
         }
 
-        return $sum + array_sum($arr);
-    }
-
-    private function findMinIndex(array $arr): int
-    {
-        $minKey = 0;
-        foreach ($arr as $key => $item) {
-            if ($item < $arr[$minKey]) {
-                $minKey = $key;
-            }
-        }
-
-        return $minKey;
+        return $sum;
     }
 }
