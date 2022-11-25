@@ -4,43 +4,40 @@ declare(strict_types=1);
 
 namespace Problems\Medium\SumOfSubarrayMinimums;
 
-use SplStack;
-
 final class Solution
 {
+    private const LIMIT = 1000000007;
+
     /**
      * @param int[] $arr
      * @return int
      */
     public function sumSubarrayMins(array $arr): int
     {
-        if (count($arr) === 1) {
-            return $arr[0];
-        }
-
-        $stack = new SplStack();
-        $stack->push($arr);
         $sum = 0;
-        $unique = [$arr];
-        while (!$stack->isEmpty()) {
-            $cur = $stack->pop();
-            if (count($cur) > 1) {
-                $a = array_slice($cur, 0, count($cur) - 1);
-                if (!in_array($a, $unique, true) && count($a) > 1) {
-                    $stack->push($a);
-                    $unique[] = $a;
-                }
-
-                $b = array_slice($cur, 1);
-                if (!in_array($b, $unique, true) && count($b) > 1) {
-                    $stack->push($b);
-                    $unique[] = $b;
-                }
+        for ($i = 0, $iMax = count($arr); $i < $iMax; $i++) {
+            $tmp = array_slice($arr, $i);
+            $minIndex = null;
+            for ($j = 0, $jMax = count($arr) - $i - 1; $j < $jMax; $j++) {
+                $a = array_slice($tmp, 0, count($tmp) - $j);
+                $minIndex = ($minIndex === null || $minIndex > count($tmp) - $j - 1) ? $this->findMinIndex($a) : $minIndex;
+                $sum += $a[$minIndex];
+                $sum %= self::LIMIT;
             }
-
-            $sum += min($cur);
         }
 
         return $sum + array_sum($arr);
+    }
+
+    private function findMinIndex(array $arr): int
+    {
+        $minKey = 0;
+        foreach ($arr as $key => $item) {
+            if ($item < $arr[$minKey]) {
+                $minKey = $key;
+            }
+        }
+
+        return $minKey;
     }
 }
