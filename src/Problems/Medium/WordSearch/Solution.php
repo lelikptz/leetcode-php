@@ -39,7 +39,6 @@ final class Solution
                 ];
             }
 
-
             [$cur, $i, $this->path] = array_pop($stack);
             $this->path[] = $cur;
         }
