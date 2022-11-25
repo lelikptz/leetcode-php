@@ -18,8 +18,8 @@ final class Solution
     {
         $stack = new SplStack();
         $sum = 0;
-        foreach ($arr as $i => $iValue) {
-            while (!$stack->isEmpty() && ($i === count($arr) || $arr[$stack->top()] >= $iValue)) {
+        for ($i = 0, $iMax = count($arr); $i <= $iMax; $i++) {
+            while (!$stack->isEmpty() && ($i === count($arr) || $arr[$stack->top()] >= $arr[$i])) {
                 $mid = $stack->pop();
                 $left = $stack->isEmpty() ? -1 : $stack->top();
                 $right = $i;
