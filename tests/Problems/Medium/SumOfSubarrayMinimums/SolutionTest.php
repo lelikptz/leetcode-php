@@ -5,39 +5,6 @@ namespace tests\Problems\Medium\SumOfSubarrayMinimums;
 use Problems\Medium\SumOfSubarrayMinimums\Solution;
 use PHPUnit\Framework\TestCase;
 
-// 3 1 2 4
-// 3 1 2
-// 3 1
-// 3
-
-// 1 2 4
-// 1 2
-// 1
-
-// 2 4
-// 2
-
-// 4
-
-
-// 11 81 94 43 3
-// 11 81 94 43
-// 11 81 94
-// 11 81
-// 11
-
-// 81 94 43 3
-// 81 94 43
-// 81 94
-// 81
-
-// 94 43 3
-// 94 43
-// 94
-
-// 43 3
-// 3
-
 class SolutionTest extends TestCase
 {
     /**
