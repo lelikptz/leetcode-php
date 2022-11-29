@@ -14,21 +14,20 @@ final class Solution
      */
     public function postorderTraversal(?TreeNode $root): array
     {
-        /** @var TreeNode[] $queue */
-        $queue = [];
-        $result = [];
-        $node = $root;
+        $values = [];
+        $this->visit($values, $root);
 
-        while ($node !== null || !empty($queue)) {
-            while ($node !== null) {
-                $result[] = $node->val;
-                $queue[] = $node;
-                $node = $node->left;
-            }
-            $node = array_pop($queue);
-            $node = $node->right;
+        return $values;
+    }
+
+    private function visit(array &$values, ?TreeNode $node): void
+    {
+        if ($node === null) {
+            return;
         }
 
-        return array_reverse($result);
+        $this->visit($values, $node->left);
+        $this->visit($values, $node->right);
+        $values[] = $node->val;
     }
 }
