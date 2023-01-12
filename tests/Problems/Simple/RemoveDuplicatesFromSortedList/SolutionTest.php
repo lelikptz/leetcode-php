@@ -6,10 +6,13 @@ namespace tests\Problems\Simple\RemoveDuplicatesFromSortedList;
 
 use PHPUnit\Framework\TestCase;
 use Problems\Simple\RemoveDuplicatesFromSortedList\Solution;
+use Structure\CreateList;
 use Structure\ListNode;
 
 final class SolutionTest extends TestCase
 {
+    use CreateList;
+
     /**
      * @test
      * @dataProvider dataProvider
@@ -34,21 +37,5 @@ final class SolutionTest extends TestCase
                 [$this->createList([1, 1, 2, 3, 3]), $this->createList([1, 2, 3])],
                 [$this->createList([1, 1, 1]), $this->createList([1])],
             ];
-    }
-
-    private function createList(array $array): ListNode
-    {
-        /** @var ListNode[] $array */
-        $array = array_map(static function (int $value) {
-            $l = new ListNode();
-            $l->val = $value;
-            return $l;
-        }, $array);
-
-        foreach ($array as $key => $item) {
-            $item->next = $array[$key + 1] ?? null;
-        }
-
-        return array_shift($array);
     }
 }
