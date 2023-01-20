@@ -23,8 +23,8 @@ final class Solution
                 $val = $l1->val + $l2->val + $carry;
             }
 
-            $l1 = $l1->next ?? $l1;
-            $l2 = $l2->next ?? $l2;
+            $l1 = $l1 !== null ? $l1->next : $l1;
+            $l2 = $l2 !== null ? $l2->next : $l2;
 
             if ($val >= 10) {
                 $carry = intdiv($val, 10);
