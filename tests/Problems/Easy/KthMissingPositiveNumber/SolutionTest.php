@@ -7,7 +7,7 @@ namespace tests\Problems\Easy\KthMissingPositiveNumber;
 use Problems\Easy\KthMissingPositiveNumber\Solution;
 use PHPUnit\Framework\TestCase;
 
-class SolutionTest extends TestCase
+final class SolutionTest extends TestCase
 {
     /**
      * @test
